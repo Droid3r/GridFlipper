@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -58,9 +60,11 @@ public class FeedGridAdapter extends RecyclerView.Adapter<FeedGridAdapter.ViewHo
                 .placeholder(R.drawable.place_holder)
                 .error(R.drawable.error)
                 .into(holder.ivFeedImage);
+
         holder.vfImageFlipper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (flippedPosition == clickPosition) {
                     notifyItemChanged(flippedPosition);
                     flippedPosition = -1;
@@ -99,7 +103,6 @@ public class FeedGridAdapter extends RecyclerView.Adapter<FeedGridAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.inject(this, itemView);
-            //vfImageFlipper.setAnimation();
 
         }
     }
