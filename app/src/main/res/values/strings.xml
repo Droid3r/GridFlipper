@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Stayzilla Test</string>
+    <string name="error">Error! Check your network connection!</string>
+    <string name="loading_data">Loading Data</string>
+    <string name="loading_msg">Sit tight!</string>
+    <string name="no_title">No title!</string>
+</resources>

@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "akshay.example.com.flipimagegrid"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.0.0'
+    compile 'com.android.support:design:23.0.0'
+    /** dagger DI lib */
+    compile 'com.google.dagger:dagger:2.0.2'
+    apt 'com.google.dagger:dagger-compiler:2.0.2'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    /** retrofit library - REST client     */
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    /** gson converter - convert json to POJO  */
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    /**jackson data mapper*/
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.1'
+    /**picasso image loading library*/
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    /**okhttp cache for disk caching**/
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    /**butterknife view injection*/
+    compile 'com.jakewharton:butterknife:6.1.0'
+    /**Unit testing*/
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+    testCompile 'org.powermock:powermock-api-mockito:1.5.6'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.2'
+}
